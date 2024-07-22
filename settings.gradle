@@ -1,1 +1,18 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+        mavenCentral()
+        maven {
+            url = uri("https://repos.tech.orange/artifactory/nfsapps-virt-maven-stable")
+            credentials {
+                diodRepositoryUsername = settings["diodRepositoryUsername"]
+                diodRepositoryToken = settings["diodRepositoryToken"]
+                username = diodRepositoryUsername
+                password = diodRepositoryToken
+            }
+        }
+    }
+}
+
 rootProject.name = "sshj"
